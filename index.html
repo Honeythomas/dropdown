@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: "/get_dropdown_options",
+          type: "GET",
+          success: function (data) {
+            $.each(data, function (index, value) {
+              $("#dropdown").append("<option>" + value + "</option>");
+            });
+          },
+        });
+      });
+    </script>
+
+    <h1>Dynamic Dropdown Example</h1>
+    <select id="dropdown1">
+      <option>Curriculum</option>
+    </select>
+    <select id="dropdown2">
+      <option>Class</option>
+    </select>
+    <select id="dropdown3">
+      <option>Subject</option>
+    </select>
+    <select id="dropdown4">
+      <option>Textbook</option>
+    </select>
+    <select id="dropdown5">
+      <option>Strand</option>
+    </select>
+  </body>
+</html>
